@@ -4,11 +4,11 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import dagger.hilt.android.AndroidEntryPoint
 import dev.hossain.android.catalog.R
 import dev.hossain.android.catalog.databinding.ActivityFeatureXBinding
 import dev.hossain.android.catalog.ui.common.Result
 import dev.hossain.android.catalog.ui.extensions.onChanged
-import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * This activity shows how web service API can be used via ViewModel.

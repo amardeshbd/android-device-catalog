@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import dev.hossain.android.catalog.R
 import dev.hossain.android.catalog.ui.home.HomeViewModel
-import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 /**

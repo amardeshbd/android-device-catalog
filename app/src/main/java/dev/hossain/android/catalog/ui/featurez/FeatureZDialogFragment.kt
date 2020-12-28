@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import dev.hossain.android.catalog.R
 import dev.hossain.android.catalog.databinding.DialogFeatureZBinding
-import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class FeatureZDialogFragment : DialogFragment() {

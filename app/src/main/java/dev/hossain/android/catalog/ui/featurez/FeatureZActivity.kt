@@ -5,9 +5,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import dagger.hilt.android.AndroidEntryPoint
 import dev.hossain.android.catalog.R
 import dev.hossain.android.catalog.databinding.ActivityFeatureZBinding
-import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 /**

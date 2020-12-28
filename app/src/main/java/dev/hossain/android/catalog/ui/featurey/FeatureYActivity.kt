@@ -7,9 +7,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import dagger.hilt.android.AndroidEntryPoint
 import dev.hossain.android.catalog.R
 import dev.hossain.android.catalog.databinding.ActivityFeatureYBinding
-import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 /**
