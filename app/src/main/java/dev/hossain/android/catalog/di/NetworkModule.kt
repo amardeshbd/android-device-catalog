@@ -1,11 +1,11 @@
 package dev.hossain.android.catalog.di
 
-import dev.hossain.android.catalog.BuildConfig
-import dev.hossain.android.catalog.api.WebServiceApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import dev.hossain.android.catalog.BuildConfig
+import dev.hossain.android.catalog.api.WebServiceApi
 import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

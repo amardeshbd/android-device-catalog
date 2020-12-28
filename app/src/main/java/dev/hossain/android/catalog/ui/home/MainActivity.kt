@@ -7,10 +7,10 @@ import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
-import dev.hossain.android.catalog.R
-import dev.hossain.android.catalog.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
+import dev.hossain.android.catalog.R
+import dev.hossain.android.catalog.databinding.ActivityMainBinding
 import timber.log.Timber
 
 @AndroidEntryPoint

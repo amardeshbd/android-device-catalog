@@ -9,12 +9,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import dagger.hilt.android.AndroidEntryPoint
 import dev.hossain.android.catalog.R
 import dev.hossain.android.catalog.databinding.FragmentDemoContentABinding
 import dev.hossain.android.catalog.ui.featurex.FeatureXActivity
 import dev.hossain.android.catalog.ui.featurey.FeatureYActivity
 import dev.hossain.android.catalog.ui.featurez.FeatureZActivity
-import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 /**
