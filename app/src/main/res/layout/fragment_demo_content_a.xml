@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.android.barebone.ui.home.homefragments.FragmentAViewModel" />
+            type="dev.hossain.android.catalog.ui.home.homefragments.FragmentAViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

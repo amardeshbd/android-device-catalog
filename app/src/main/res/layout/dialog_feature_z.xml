@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.android.barebone.ui.featurez.FeatureZViewModel" />
+            type="dev.hossain.android.catalog.ui.featurez.FeatureZViewModel" />
     </data>
 
     <LinearLayout

@@ -11,7 +11,7 @@ plugins {
 android {
     compileSdkVersion rootProject.ext.androidCompileSdkVersion
     defaultConfig {
-        applicationId "com.example.android.barebone" // TODO UPDATE APP-ID
+        applicationId "dev.hossain.android.catalog"
         minSdkVersion rootProject.ext.androidMinSdkVersion
         targetSdkVersion rootProject.ext.androidTargetSdkVersion
         versionCode 1

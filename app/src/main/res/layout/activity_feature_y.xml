@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.android.barebone.ui.featurey.FeatureYViewModel" />
+            type="dev.hossain.android.catalog.ui.featurey.FeatureYViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
