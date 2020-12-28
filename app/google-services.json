@@ -1,41 +1,37 @@
 {
-  "_____DEVELOPER_NOTE_____": "YOU MUST GENERATE YOUR OWN FIREBASE CONFIG AND DROP IT HERE.",
-  "________________________": "____________________________________________________________",
   "project_info": {
-    "project_number": "123",
-    "firebase_url": "https://GENERATE-YOUR-CONFIG.firebaseio.com",
-    "project_id": "GENERATE-YOUR-CONFIG",
-    "storage_bucket": "GENERATE-YOUR-CONFIG.appspot.com"
+    "project_number": "141680233797",
+    "firebase_url": "https://android-device-catalog.firebaseio.com",
+    "project_id": "android-device-catalog",
+    "storage_bucket": "android-device-catalog.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:123:android:123",
+        "mobilesdk_app_id": "1:141680233797:android:c7cc692b0c43f20771022c",
         "android_client_info": {
           "package_name": "dev.hossain.android.catalog"
         }
       },
       "oauth_client": [
         {
-          "client_id": "GENERATE-YOUR-CONFIG.apps.googleusercontent.com",
+          "client_id": "141680233797-tfr93aa2e4tt9dgf78s2mn6gcp3bnlgk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "GENERATE-YOUR-CONFIG"
+          "current_key": "AIzaSyASprWn7n_KJET-gl2i7BjTAZFIx2IjoK8"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141680233797-tfr93aa2e4tt9dgf78s2mn6gcp3bnlgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
