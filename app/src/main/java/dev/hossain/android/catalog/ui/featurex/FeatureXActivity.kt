@@ -9,6 +9,8 @@ import dev.hossain.android.catalog.R
 import dev.hossain.android.catalog.databinding.ActivityFeatureXBinding
 import dev.hossain.android.catalog.ui.common.Result
 import dev.hossain.android.catalog.ui.extensions.onChanged
+import dev.hossain.android.catalogparser.Parser
+import timber.log.Timber
 
 /**
  * This activity shows how web service API can be used via ViewModel.
@@ -39,5 +41,14 @@ class FeatureXActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        // TEST CODE
+        val catalog = assets.open("android-devices-catalog.csv")
+        val parseDeviceCatalogData = Parser().parseDeviceCatalogData(catalog.bufferedReader().use { it.readText() })
+        Timber.d("Got records: %s", parseDeviceCatalogData.size)
     }
 }

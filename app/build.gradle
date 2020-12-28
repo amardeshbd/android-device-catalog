@@ -135,6 +135,10 @@ dependencies {
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$rootProject.androidXHilt"
     kapt "androidx.hilt:hilt-compiler:$rootProject.androidXHilt"
 
+    // Parser for Device Catalog CSV file
+    // https://github.com/amardeshbd/android-device-catalog-parser
+    implementation 'com.github.amardeshbd:android-device-catalog-parser:1.1'
+
     //
     // Unit Tests
     // --------------------------------------------------
