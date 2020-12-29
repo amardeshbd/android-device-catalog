@@ -139,6 +139,14 @@ dependencies {
     // https://github.com/amardeshbd/android-device-catalog-parser
     implementation 'com.github.amardeshbd:android-device-catalog-parser:1.1'
 
+    // Room Database
+    // https://developer.android.com/training/data-storage/room
+    implementation "androidx.room:room-runtime:$rootProject.androidXRoomVersion"
+    kapt "androidx.room:room-compiler:$rootProject.androidXRoomVersion"
+    // Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$rootProject.androidXRoomVersion"
+
+
     //
     // Unit Tests
     // --------------------------------------------------
@@ -147,6 +155,7 @@ dependencies {
     testImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchCoreTesting"
     testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
     testImplementation "org.mockito:mockito-inline:$rootProject.mockitoVersion"
+    testImplementation "androidx.room:room-testing:$androidXRoomVersion"
     androidTestImplementation "androidx.test:runner:$rootProject.androidTestRunnerVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
 }

@@ -67,7 +67,7 @@ ext {
     // SDK Level and Tools
     // https://source.android.com/setup/start/build-numbers
     // -----------------------------------------------------
-    androidMinSdkVersion = 22 // Lollipop 5.1
+    androidMinSdkVersion = 24
     androidTargetSdkVersion = 30 // Android 11
     androidCompileSdkVersion = 30
     buildToolsVersion = '29.0.3' // Android SDK Build Tools - Versions: https://developer.android.com/studio/releases/build-tools.html
@@ -83,6 +83,7 @@ ext {
     androidMaterialVersion = '1.3.0-beta01' // https://github.com/material-components/material-components-android/releases
     viewPager2Version = '1.0.0' // https://developer.android.com/jetpack/androidx/releases/viewpager2
     androidXHilt = '1.0.0-alpha02' // https://developer.android.com/jetpack/androidx/releases/hilt
+    androidXRoomVersion = "2.2.6" // https://developer.android.com/training/data-storage/room
 
     // 3rd party library dependencies
     // --------------------------------------------------
