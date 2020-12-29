@@ -41,7 +41,7 @@ class FragmentA : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         Timber.d("Got injected fragment's own viewmodel instance: %s.", viewModel)
 
         // Inflate the layout for this fragment using data binding and set the view model

@@ -1,9 +1,7 @@
 package dev.hossain.android.catalog.ui.home.homefragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
@@ -17,7 +15,7 @@ import timber.log.Timber
  * TODO: Move the fragment to it's own feature package.
  */
 @AndroidEntryPoint
-class FragmentC : Fragment() {
+class FragmentC : Fragment(R.layout.fragment_demo_content) {
     companion object {
         fun createInstance(): FragmentC {
             return FragmentC()
@@ -26,14 +24,8 @@ class FragmentC : Fragment() {
 
     val viewModel: HomeViewModel by viewModels()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         Timber.d("Got injected parent's viewmodel instance: %s.", viewModel)
-
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_demo_content, container, false)
     }
 }
