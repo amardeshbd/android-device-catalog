@@ -1,0 +1,149 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "4f11613fcf611a77eab748f66df7c9dc",
+    "entities": [
+      {
+        "tableName": "Device",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `manufacturer` TEXT NOT NULL, `model_name` TEXT NOT NULL, `model_code` TEXT NOT NULL, `ram` TEXT NOT NULL, `type` TEXT NOT NULL, `processor_name` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "manufacturer",
+            "columnName": "manufacturer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modelName",
+            "columnName": "model_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modelCode",
+            "columnName": "model_code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ram",
+            "columnName": "ram",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "formFactor",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "processorName",
+            "columnName": "processor_name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Device_manufacturer",
+            "unique": false,
+            "columnNames": [
+              "manufacturer"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Device_manufacturer` ON `${TABLE_NAME}` (`manufacturer`)"
+          },
+          {
+            "name": "index_Device_model_name",
+            "unique": false,
+            "columnNames": [
+              "model_name"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Device_model_name` ON `${TABLE_NAME}` (`model_name`)"
+          },
+          {
+            "name": "index_Device_model_code",
+            "unique": false,
+            "columnNames": [
+              "model_code"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Device_model_code` ON `${TABLE_NAME}` (`model_code`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "screen_density",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`density` INTEGER NOT NULL, `device_id` INTEGER NOT NULL, PRIMARY KEY(`density`, `device_id`))",
+        "fields": [
+          {
+            "fieldPath": "density",
+            "columnName": "density",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deviceId",
+            "columnName": "device_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "density",
+            "device_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "opengl_versions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`version_number` TEXT NOT NULL, `device_id` INTEGER NOT NULL, PRIMARY KEY(`version_number`, `device_id`))",
+        "fields": [
+          {
+            "fieldPath": "version",
+            "columnName": "version_number",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deviceId",
+            "columnName": "device_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "version_number",
+            "device_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4f11613fcf611a77eab748f66df7c9dc')"
+    ]
+  }
+}

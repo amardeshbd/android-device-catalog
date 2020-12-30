@@ -1,9 +1,9 @@
 package dev.hossain.android.catalog.data
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
+import dev.hossain.android.catalog.data.model.DeviceScreenDensity
+import dev.hossain.android.catalog.data.model.OpenGLVersion
+import dev.hossain.android.catalog.data.model.ScreenDensity
 
 @Dao
 interface DeviceDao {
@@ -19,6 +19,18 @@ interface DeviceDao {
     @Insert
     fun insert(device: Device)
 
+    @Insert
+    fun insert(density: ScreenDensity)
+
+    @Insert
+    fun insert(density: OpenGLVersion)
+
     @Delete
     fun delete(device: Device)
+
+
+    // Relational quries
+    @Transaction
+    @Query("SELECT * FROM device")
+    fun getUsersAndLibraries(): List<DeviceScreenDensity>
 }
