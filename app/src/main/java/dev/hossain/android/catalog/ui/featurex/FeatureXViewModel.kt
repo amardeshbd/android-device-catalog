@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.room.Room
 import dev.hossain.android.catalog.api.WebServiceApi
 import dev.hossain.android.catalog.data.AppDatabase
-import dev.hossain.android.catalog.data.Device
+import dev.hossain.android.catalog.data.model.Device
 import dev.hossain.android.catalog.data.model.OpenGLVersion
 import dev.hossain.android.catalog.data.model.ScreenDensity
 import dev.hossain.android.catalog.ui.common.Result
@@ -65,11 +65,10 @@ class FeatureXViewModel @ViewModelInject constructor(private val api: WebService
             val oglv = OpenGLVersion("3.2", 1)
             dao.insert(oglv)
 
-            val densities = dao.getUsersAndLibraries()
+            val densities = dao.getAllDeviceInfo()
             Timber.d("testDb: devices = $densities")
         }
     }
-
 
     override fun onCleared() {
         super.onCleared()

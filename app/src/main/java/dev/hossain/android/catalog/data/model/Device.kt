@@ -1,9 +1,8 @@
-package dev.hossain.android.catalog.data
+package dev.hossain.android.catalog.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.Collections.emptyList
 
 /**
  * Model class for representing an Android device from the catalog.
@@ -54,34 +53,4 @@ data class Device(
      */
     @ColumnInfo(name = "processor_name")
     val processorName: String = ""
-//
-//    /**
-//     * Examples: 1024x600, 1366x768, 480x854, 800x1280
-//     */
-//    @ColumnInfo(name = "screen_sizes")
-//    val screenSizes: List<String> = emptyList(),
-//
-//    /**
-//     * Examples: 160, 213, 240, 300, 320
-//     */
-//    @ColumnInfo(name = "screen_densities")
-//    val screenDensities: List<Int> = emptyList(),
-//
-//    /**
-//     * Examples: arm64-v8a, armeabi, armeabi-v7a
-//     */
-//    @ColumnInfo(name = "abis")
-//    val abis: List<String> = emptyList(),
-//
-//    /**
-//     * Examples: 23, 24, 27
-//     */
-//    @ColumnInfo(name = "sdk_versions")
-//    val sdkVersions: List<Int> = emptyList(),
-//
-//    /**
-//     * Examples: 2.0, 3.0, 3.1, 3.2
-//     */
-//    @ColumnInfo(name = "opengl_versions")
-//    val openGlEsVersions: List<String> = emptyList()
 )

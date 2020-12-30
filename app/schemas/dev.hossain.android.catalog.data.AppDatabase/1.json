@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "4f11613fcf611a77eab748f66df7c9dc",
+    "identityHash": "82ab264ff90e2e525be775a71b034830",
     "entities": [
       {
         "tableName": "Device",
@@ -138,12 +138,93 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "screen_sizes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`screen_size` TEXT NOT NULL, `device_id` INTEGER NOT NULL, PRIMARY KEY(`screen_size`, `device_id`))",
+        "fields": [
+          {
+            "fieldPath": "screenSize",
+            "columnName": "screen_size",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deviceId",
+            "columnName": "device_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "screen_size",
+            "device_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "sdk_version",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`api_level` INTEGER NOT NULL, `device_id` INTEGER NOT NULL, PRIMARY KEY(`api_level`, `device_id`))",
+        "fields": [
+          {
+            "fieldPath": "apiLevel",
+            "columnName": "api_level",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deviceId",
+            "columnName": "device_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "api_level",
+            "device_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "abi_versions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`abi` TEXT NOT NULL, `device_id` INTEGER NOT NULL, PRIMARY KEY(`abi`, `device_id`))",
+        "fields": [
+          {
+            "fieldPath": "abi",
+            "columnName": "abi",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deviceId",
+            "columnName": "device_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "abi",
+            "device_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4f11613fcf611a77eab748f66df7c9dc')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '82ab264ff90e2e525be775a71b034830')"
     ]
   }
 }

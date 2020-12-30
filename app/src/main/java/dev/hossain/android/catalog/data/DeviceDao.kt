@@ -1,9 +1,17 @@
 package dev.hossain.android.catalog.data
 
-import androidx.room.*
-import dev.hossain.android.catalog.data.model.DeviceScreenDensity
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.Query
+import androidx.room.Transaction
+import dev.hossain.android.catalog.data.model.AbiVersion
+import dev.hossain.android.catalog.data.model.Device
+import dev.hossain.android.catalog.data.model.DeviceInfo
 import dev.hossain.android.catalog.data.model.OpenGLVersion
 import dev.hossain.android.catalog.data.model.ScreenDensity
+import dev.hossain.android.catalog.data.model.ScreenSize
+import dev.hossain.android.catalog.data.model.SdkVersion
 
 @Dao
 interface DeviceDao {
@@ -12,6 +20,10 @@ interface DeviceDao {
 
     @Query("SELECT * FROM device WHERE _id IN (:ids)")
     fun loadAllByIds(ids: IntArray): List<Device>
+
+    //
+    // Insert new data and relational data
+    //
 
     @Insert
     fun insertAll(vararg devices: Device)
@@ -25,12 +37,23 @@ interface DeviceDao {
     @Insert
     fun insert(density: OpenGLVersion)
 
+    @Insert
+    fun insert(abiVersion: AbiVersion)
+
+    @Insert
+    fun insert(screenSize: ScreenSize)
+
+    @Insert
+    fun insert(sdkVersion: SdkVersion)
+
     @Delete
     fun delete(device: Device)
 
+    //
+    // Relational queries
+    //
 
-    // Relational quries
     @Transaction
     @Query("SELECT * FROM device")
-    fun getUsersAndLibraries(): List<DeviceScreenDensity>
+    fun getAllDeviceInfo(): List<DeviceInfo>
 }

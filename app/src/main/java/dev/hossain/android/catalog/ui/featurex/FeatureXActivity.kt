@@ -1,14 +1,11 @@
 package dev.hossain.android.catalog.ui.featurex
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.room.Room
 import dagger.hilt.android.AndroidEntryPoint
 import dev.hossain.android.catalog.R
-import dev.hossain.android.catalog.data.AppDatabase
 import dev.hossain.android.catalog.databinding.ActivityFeatureXBinding
 import dev.hossain.android.catalog.ui.common.Result
 import dev.hossain.android.catalog.ui.extensions.onChanged
@@ -53,7 +50,6 @@ class FeatureXActivity : AppCompatActivity() {
         val catalog = assets.open("android-devices-catalog.csv")
         val parseDeviceCatalogData = Parser().parseDeviceCatalogData(catalog.bufferedReader().use { it.readText() })
         Timber.d("Got records: %s", parseDeviceCatalogData.size)
-
 
         viewModel.testDb(this.applicationContext)
     }
