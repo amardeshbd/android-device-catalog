@@ -51,6 +51,17 @@ android {
         // https://developer.android.com/topic/libraries/data-binding/start
         dataBinding = true
     }
+
+    testOptions {
+        // https://developer.android.com/training/testing/fundamentals
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+    // Gradle automatically adds 'android.test.runner' as a dependency.
+    useLibrary 'android.test.runner'
+    useLibrary 'android.test.base'
+    useLibrary 'android.test.mock'
 }
 
 // Configure ktlint plugin
@@ -155,10 +166,13 @@ dependencies {
     // --------------------------------------------------
     testImplementation "junit:junit:$rootProject.junitVersion"
     testImplementation "androidx.test:core:$rootProject.androidxTestCore"
+    testImplementation "androidx.test:runner:$rootProject.androidxTestCore"
+    testImplementation "androidx.test:rules:$rootProject.androidxTestCore"
     testImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchCoreTesting"
     testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
     testImplementation "org.mockito:mockito-inline:$rootProject.mockitoVersion"
     testImplementation "androidx.room:room-testing:$androidXRoomVersion"
+
     androidTestImplementation "androidx.test:runner:$rootProject.androidTestRunnerVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
 }
