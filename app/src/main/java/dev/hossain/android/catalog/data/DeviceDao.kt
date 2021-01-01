@@ -26,28 +26,37 @@ interface DeviceDao {
     //
 
     @Insert
-    fun insertAll(vararg devices: Device)
+    suspend fun insertAll(vararg devices: Device)
 
     @Insert
-    fun insert(device: Device)
+    suspend fun insert(device: Device)
 
     @Insert
-    fun insert(density: ScreenDensity)
+    fun insertSync(device: Device)
 
     @Insert
-    fun insert(density: OpenGLVersion)
+    suspend fun insert(density: ScreenDensity)
 
     @Insert
-    fun insert(abiVersion: AbiVersion)
+    suspend fun insert(density: OpenGLVersion)
 
     @Insert
-    fun insert(screenSize: ScreenSize)
+    suspend fun insert(abiVersion: AbiVersion)
 
     @Insert
-    fun insert(sdkVersion: SdkVersion)
+    fun insertSync(abiVersion: AbiVersion)
+
+    @Insert
+    suspend fun insert(screenSize: ScreenSize)
+
+    @Insert
+    suspend fun insert(sdkVersion: SdkVersion)
 
     @Delete
-    fun delete(device: Device)
+    suspend fun delete(device: Device)
+
+    @Delete
+    fun deleteSync(device: Device)
 
     //
     // Relational queries

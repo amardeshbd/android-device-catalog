@@ -35,15 +35,30 @@ class AppDatabaseInstTest {
 
     @Test
     @Throws(Exception::class)
-    fun writeUserAndReadInList() {
-        val user: Device = TestUtil.createDevice()
+    fun give_data_inserted__can_read_data_from_db() {
+        val device: Device = TestUtil.createDevice()
 
-        dao.insert(user)
+        dao.insertSync(device)
         val allDevice = dao.getAllDeviceInfo()
 
         assertThat(allDevice.size, equalTo(1))
 
         assertThat(allDevice[0].device.modelName, equalTo("ModelX"))
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun give_data_inserted__can_delete_data() {
+        val device: Device = TestUtil.createDevice()
+
+        dao.insertSync(device)
+        val allDevice = dao.getAllDeviceInfo()
+
+        assertThat(allDevice.size, equalTo(1))
+
+        dao.deleteSync(allDevice[0].device)
+
+        assertThat(dao.getAll().size, equalTo(0))
     }
 
     object TestUtil {
