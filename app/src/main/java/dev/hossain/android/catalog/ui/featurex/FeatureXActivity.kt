@@ -50,7 +50,5 @@ class FeatureXActivity : AppCompatActivity() {
         val catalog = assets.open("android-devices-catalog.csv")
         val parseDeviceCatalogData = Parser().parseDeviceCatalogData(catalog.bufferedReader().use { it.readText() })
         Timber.d("Got records: %s", parseDeviceCatalogData.size)
-
-        viewModel.testDb(this.applicationContext)
     }
 }
