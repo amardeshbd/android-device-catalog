@@ -32,8 +32,8 @@ class FeatureYViewModel @ViewModelInject constructor(
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            val androidCatalogDevices = parseCatalogData()
-            insertAllCatalogDevices(androidCatalogDevices)
+            /*val androidCatalogDevices = parseCatalogData()
+            insertAllCatalogDevices(androidCatalogDevices)*/
 
             testDataShowManufecturers()
         }
