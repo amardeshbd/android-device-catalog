@@ -32,19 +32,13 @@ class FeatureYViewModel @ViewModelInject constructor(
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
+            // TODO move this to separate importer class
             /*val androidCatalogDevices = parseCatalogData()
             insertAllCatalogDevices(androidCatalogDevices)*/
 
             testDataShowManufecturers()
         }
     }
-
-//    private fun generateSampleDataSet() {
-//        // TEST CODE
-//        val catalog = context.assets.open("android-devices-catalog.csv")
-//        val parseDeviceCatalogData = Parser().parseDeviceCatalogData(catalog.bufferedReader().use { it.readText() })
-//        Timber.d(//        sampleData.addAll(parseDeviceCatalogData.map { ItemModel(it.hashCode(), it.modelName) })
-//    }
 
     suspend fun parseCatalogData(): List<AndroidDevice> {
         val catalog = context.assets.open("android-devices-catalog.csv")
