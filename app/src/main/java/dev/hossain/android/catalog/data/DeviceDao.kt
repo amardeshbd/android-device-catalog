@@ -12,14 +12,22 @@ import dev.hossain.android.catalog.data.model.OpenGLVersion
 import dev.hossain.android.catalog.data.model.ScreenDensity
 import dev.hossain.android.catalog.data.model.ScreenSize
 import dev.hossain.android.catalog.data.model.SdkVersion
+import dev.hossain.android.catalog.data.model.TupleManufacturer
 
 @Dao
 interface DeviceDao {
-    @Query("SELECT * FROM device")
+    @Query("SELECT * FROM devices")
     fun getAll(): List<Device>
 
-    @Query("SELECT * FROM device WHERE _id IN (:ids)")
+    @Query("SELECT * FROM devices WHERE _id IN (:ids)")
     fun loadAllByIds(ids: IntArray): List<Device>
+
+    //
+    // Select stats based queries
+    //
+
+    @Query("SELECT manufacturer, COUNT(*) AS total_devices_made FROM devices GROUP BY manufacturer")
+    suspend fun getManufacturers(): List<TupleManufacturer>
 
     //
     // Insert new data and relational data
@@ -29,7 +37,7 @@ interface DeviceDao {
     suspend fun insertAll(vararg devices: Device)
 
     @Insert
-    suspend fun insert(device: Device)
+    suspend fun insert(device: Device): Long
 
     @Insert
     fun insertSync(device: Device)
@@ -63,6 +71,6 @@ interface DeviceDao {
     //
 
     @Transaction
-    @Query("SELECT * FROM device")
+    @Query("SELECT * FROM devices")
     fun getAllDeviceInfo(): List<DeviceInfo>
 }
