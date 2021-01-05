@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 /**
  * Model class for representing an Android device from the catalog.
  */
-@Entity
+@Entity(tableName = "devices")
 data class Device(
     @ColumnInfo(name = "_id")
     @PrimaryKey(autoGenerate = true)

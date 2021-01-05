@@ -2,10 +2,10 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "82ab264ff90e2e525be775a71b034830",
+    "identityHash": "e10e33afb91fe0c7198a3b13933677aa",
     "entities": [
       {
-        "tableName": "Device",
+        "tableName": "devices",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `manufacturer` TEXT NOT NULL, `model_name` TEXT NOT NULL, `model_code` TEXT NOT NULL, `ram` TEXT NOT NULL, `type` TEXT NOT NULL, `processor_name` TEXT NOT NULL)",
         "fields": [
           {
@@ -59,28 +59,28 @@
         },
         "indices": [
           {
-            "name": "index_Device_manufacturer",
+            "name": "index_devices_manufacturer",
             "unique": false,
             "columnNames": [
               "manufacturer"
             ],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_Device_manufacturer` ON `${TABLE_NAME}` (`manufacturer`)"
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_devices_manufacturer` ON `${TABLE_NAME}` (`manufacturer`)"
           },
           {
-            "name": "index_Device_model_name",
+            "name": "index_devices_model_name",
             "unique": false,
             "columnNames": [
               "model_name"
             ],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_Device_model_name` ON `${TABLE_NAME}` (`model_name`)"
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_devices_model_name` ON `${TABLE_NAME}` (`model_name`)"
           },
           {
-            "name": "index_Device_model_code",
+            "name": "index_devices_model_code",
             "unique": false,
             "columnNames": [
               "model_code"
             ],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_Device_model_code` ON `${TABLE_NAME}` (`model_code`)"
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_devices_model_code` ON `${TABLE_NAME}` (`model_code`)"
           }
         ],
         "foreignKeys": []
@@ -224,7 +224,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '82ab264ff90e2e525be775a71b034830')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e10e33afb91fe0c7198a3b13933677aa')"
     ]
   }
 }
