@@ -30,6 +30,8 @@ class DataStoreModule {
     @Singleton
     fun provideDatabase(@ApplicationContext appContext: Context): AppDatabase {
         return Room.databaseBuilder(appContext, AppDatabase::class.java, "device-catalog.db")
+            // https://developer.android.com/training/data-storage/room/prepopulate#from-asset
+            .createFromAsset("database/device-catalog.db")
             // https://developer.android.com/training/data-storage/room/migrating-db-versions#kotlin
             .fallbackToDestructiveMigration()
             .build()
