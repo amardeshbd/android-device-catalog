@@ -1,5 +1,6 @@
 package dev.hossain.android.catalog.ui.landing
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,9 +12,11 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.reddit.indicatorfastscroll.FastScrollItemIndicator
 import dagger.hilt.android.AndroidEntryPoint
 import dev.hossain.android.catalog.R
 import dev.hossain.android.catalog.databinding.FragmentManufacturerListBinding
+import dev.hossain.android.catalog.ui.landing.model.ItemModel
 import timber.log.Timber
 
 /**
@@ -23,6 +26,7 @@ import timber.log.Timber
 class ManufacturersFragment : Fragment() {
     private val viewModel: ManufacturersViewModel by viewModels()
     private lateinit var binding: FragmentManufacturerListBinding
+    private var itemResult: List<ItemModel> = emptyList()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         Timber.d("Got injected fragment's own viewmodel instance: %s.", viewModel)
@@ -58,6 +62,18 @@ class ManufacturersFragment : Fragment() {
 
         viewModel.data.observe(viewLifecycleOwner, Observer { result ->
             ideaListAdapter.submitList(result)
+            setupFastScroller(result)
         })
+    }
+
+    @SuppressLint("DefaultLocale")
+    private fun setupFastScroller(result: List<ItemModel>) {
+        itemResult = result
+        binding.fastscroller.setupWithRecyclerView(binding.recyclerView, { position ->
+            val item = itemResult[position] // Get your model object
+            FastScrollItemIndicator.Text(item.title.substring(0, 1).toUpperCase())
+        })
+
+        binding.fastscrollerThumb.setupWithFastScroller(binding.fastscroller)
     }
 }
