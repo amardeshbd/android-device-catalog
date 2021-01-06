@@ -16,22 +16,26 @@
 -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation_graph"
-    app:startDestination="@id/navigation_home">
+    app:startDestination="@id/manufacturer_list">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="dev.hossain.android.catalog.ui.home.homefragments.FragmentA"
-        android:label="FragmentA" />
-    <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="dev.hossain.android.catalog.ui.home.homefragments.FragmentB"
-        android:label="FragmentB" />
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="dev.hossain.android.catalog.ui.home.homefragments.FragmentC"
-        android:label="FragmentC" />
+        android:id="@+id/manufacturer_list"
+        android:name="dev.hossain.android.catalog.ui.landing.ManufacturersFragment"
+        android:label="@string/manufacturer_list" >
+        <action
+            android:id="@+id/action_manufacturer_list_to_devicesFragment"
+            app:destination="@id/devicesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/devicesFragment"
         android:name="dev.hossain.android.catalog.ui.devices.DevicesFragment"
-        android:label="DevicesFragment" />
+        android:label="DevicesFragment" >
+        <action
+            android:id="@+id/action_devicesFragment_to_deviceDetailsFragment"
+            app:destination="@id/deviceDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deviceDetailsFragment"
+        android:name="dev.hossain.android.catalog.ui.details.DeviceDetailsFragment"
+        android:label="DeviceDetailsFragment" />
 </navigation>

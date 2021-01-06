@@ -1,4 +1,4 @@
-package dev.hossain.android.catalog.ui.featurey.model
+package dev.hossain.android.catalog.ui.landing.model
 
 /**
  * Sample model class used in list to showcase recycler view.

@@ -1,4 +1,4 @@
-package dev.hossain.android.catalog.ui.featurey
+package dev.hossain.android.catalog.ui.landing
 
 import android.content.Context
 import androidx.hilt.lifecycle.ViewModelInject
@@ -14,14 +14,14 @@ import dev.hossain.android.catalog.data.model.OpenGLVersion
 import dev.hossain.android.catalog.data.model.ScreenDensity
 import dev.hossain.android.catalog.data.model.ScreenSize
 import dev.hossain.android.catalog.data.model.SdkVersion
-import dev.hossain.android.catalog.ui.featurey.model.ItemModel
+import dev.hossain.android.catalog.ui.landing.model.ItemModel
 import dev.hossain.android.catalogparser.Parser
 import dev.hossain.android.catalogparser.models.AndroidDevice
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-class FeatureYViewModel @ViewModelInject constructor(
+class ManufacturersViewModel @ViewModelInject constructor(
     private val context: Context,
     private val appDatabase: AppDatabase
 ) : ViewModel() {

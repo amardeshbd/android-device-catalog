@@ -1,4 +1,4 @@
-package dev.hossain.android.catalog.ui.featurey
+package dev.hossain.android.catalog.ui.landing
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.DiffUtil
 import dev.hossain.android.catalog.R
 import dev.hossain.android.catalog.databinding.ListItemFeatureYBinding
 import dev.hossain.android.catalog.ui.common.DataBoundListAdapter
-import dev.hossain.android.catalog.ui.featurey.model.ItemModel
+import dev.hossain.android.catalog.ui.landing.model.ItemModel
 
-class FeatureYListAdapter(
+class ManufacturersAdapter(
     private val itemClickCallback: ((ItemModel) -> Unit)?
 ) : DataBoundListAdapter<ItemModel, ListItemFeatureYBinding>(
     diffCallback = object : DiffUtil.ItemCallback<ItemModel>() {

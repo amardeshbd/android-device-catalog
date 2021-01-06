@@ -13,8 +13,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import dev.hossain.android.catalog.R
 import dev.hossain.android.catalog.databinding.FragmentDemoContentABinding
 import dev.hossain.android.catalog.ui.featurex.FeatureXActivity
-import dev.hossain.android.catalog.ui.featurey.FeatureYActivity
 import dev.hossain.android.catalog.ui.featurez.FeatureZActivity
+import dev.hossain.android.catalog.ui.landing.ManufacturersFragment
 import timber.log.Timber
 
 /**
@@ -66,7 +66,7 @@ class FragmentA : Fragment() {
 
         viewModel.featureYEvent.observe(viewLifecycleOwner, Observer {
             Timber.i("Launching feature Y activity.")
-            startActivity(Intent(activity, FeatureYActivity::class.java))
+            startActivity(Intent(activity, ManufacturersFragment::class.java))
         })
 
         viewModel.featureZEvent.observe(viewLifecycleOwner, Observer {
