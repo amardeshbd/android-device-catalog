@@ -73,4 +73,8 @@ interface DeviceDao {
     @Transaction
     @Query("SELECT * FROM devices")
     fun getAllDeviceInfo(): List<DeviceInfo>
+
+    @Transaction
+    @Query("SELECT * FROM devices WHERE manufacturer=:manufacturerName")
+    fun getManufacturerDevices(manufacturerName: String): List<DeviceInfo>
 }

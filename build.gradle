@@ -11,6 +11,10 @@ buildscript {
     // https://mvnrepository.com/artifact/com.google.dagger/hilt-android
     ext.hilt_version = '2.30.1-alpha'
 
+    // Jetpack Navigation
+    // https://developer.android.com/guide/navigation/navigation-getting-started
+    ext.navigation_version = '2.3.2'
+
     repositories {
         google() // Google's Maven repository
         jcenter() // Add the Bintray repository
@@ -31,6 +35,8 @@ buildscript {
 
         // https://kotlinlang.org/docs/reference/using-gradle.html
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
 
         // https://dagger.dev/hilt/
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
