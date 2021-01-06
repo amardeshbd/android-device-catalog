@@ -30,4 +30,8 @@
         android:id="@+id/navigation_notifications"
         android:name="dev.hossain.android.catalog.ui.home.homefragments.FragmentC"
         android:label="FragmentC" />
+    <fragment
+        android:id="@+id/devicesFragment"
+        android:name="dev.hossain.android.catalog.ui.devices.DevicesFragment"
+        android:label="DevicesFragment" />
 </navigation>
