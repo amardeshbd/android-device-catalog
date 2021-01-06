@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import dev.hossain.android.catalog.R
-import dev.hossain.android.catalog.ui.home.HomeViewModel
+import dev.hossain.android.catalog.ui.home.MainViewModel
 import timber.log.Timber
 
 /**
@@ -22,7 +22,7 @@ class FragmentC : Fragment(R.layout.fragment_demo_content) {
         }
     }
 
-    val viewModel: HomeViewModel by viewModels()
+    val viewModel: MainViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="dev.hossain.android.catalog.ui.home.HomeViewModel" />
+            type="dev.hossain.android.catalog.ui.home.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
