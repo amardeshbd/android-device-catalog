@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="dev.hossain.android.catalog.ui.home.HomeViewModel" />
@@ -16,15 +15,18 @@
         android:layout_height="match_parent"
         tools:context=".ui.home.MainActivity">
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/view_pager"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/nav_view"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:background="#dad" />
+            app:navGraph="@navigation/navigation_graph"
+            tools:background="#dcdcdc" />
 
 
         <com.google.android.material.bottomnavigation.BottomNavigationView

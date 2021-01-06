@@ -6,7 +6,7 @@ import timber.log.Timber
 import timber.log.Timber.DebugTree
 
 @HiltAndroidApp
-class BareboneApplication : Application() {
+class CatalogApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
