@@ -9,13 +9,13 @@
 
         <variable
             name="viewModel"
-            type="dev.hossain.android.catalog.ui.featurey.FeatureYViewModel" />
+            type="dev.hossain.android.catalog.ui.landing.ManufacturersViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.featurey.FeatureYActivity">
+        tools:context=".ui.landing.ManufacturersFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"

@@ -32,7 +32,7 @@
                 android:value=".ui.home.MainActivity" />
         </activity>
         <activity
-            android:name=".ui.featurey.FeatureYActivity"
+            android:name=".ui.landing.ManufacturersFragment"
             android:label="@string/title_feature_y"
             android:parentActivityName=".ui.home.MainActivity">
             <meta-data
