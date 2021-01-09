@@ -25,12 +25,15 @@ class FeatureXViewModel @ViewModelInject constructor(private val api: WebService
                 .doOnSubscribe { isOperationInProgress.set(true) }
                 .doOnSuccess { isOperationInProgress.set(false) }
                 .doOnError { isOperationInProgress.set(false) }
-                .subscribe({
-                    message.set(Result.Success(it.messsage ?: ""))
-                }, { error ->
-                    Timber.e(error)
-                    message.set(Result.Error(error))
-                })
+                .subscribe(
+                    {
+                        message.set(Result.Success(it.messsage ?: ""))
+                    },
+                    { error ->
+                        Timber.e(error)
+                        message.set(Result.Error(error))
+                    }
+                )
         )
     }
 

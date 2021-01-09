@@ -59,19 +59,28 @@ class FragmentA : Fragment() {
      * TODO: This is an example of how LiveData can be used to navigate. Update accordingly.
      */
     private fun observeNavigationEvents(viewModel: FragmentAViewModel) {
-        viewModel.featureXEvent.observe(viewLifecycleOwner, Observer {
-            Timber.i("Launching feature X activity.")
-            startActivity(Intent(activity, FeatureXActivity::class.java))
-        })
+        viewModel.featureXEvent.observe(
+            viewLifecycleOwner,
+            Observer {
+                Timber.i("Launching feature X activity.")
+                startActivity(Intent(activity, FeatureXActivity::class.java))
+            }
+        )
 
-        viewModel.featureYEvent.observe(viewLifecycleOwner, Observer {
-            Timber.i("Launching feature Y activity.")
-            startActivity(Intent(activity, ManufacturersFragment::class.java))
-        })
+        viewModel.featureYEvent.observe(
+            viewLifecycleOwner,
+            Observer {
+                Timber.i("Launching feature Y activity.")
+                startActivity(Intent(activity, ManufacturersFragment::class.java))
+            }
+        )
 
-        viewModel.featureZEvent.observe(viewLifecycleOwner, Observer {
-            Timber.i("Launching feature Z activity.")
-            startActivity(Intent(activity, FeatureZActivity::class.java))
-        })
+        viewModel.featureZEvent.observe(
+            viewLifecycleOwner,
+            Observer {
+                Timber.i("Launching feature Z activity.")
+                startActivity(Intent(activity, FeatureZActivity::class.java))
+            }
+        )
     }
 }

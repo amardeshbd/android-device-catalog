@@ -51,7 +51,7 @@ class AppLifecycleManager @Inject constructor(application: Application) {
      */
     val backgroundState: Observable<Boolean> by lazy {
         backgroundStateSubject
-                .debounce(DEBOUNCE_TIME_SECONDS, TimeUnit.SECONDS)
+            .debounce(DEBOUNCE_TIME_SECONDS, TimeUnit.SECONDS)
     }
 
     init {

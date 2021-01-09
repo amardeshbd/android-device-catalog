@@ -104,12 +104,14 @@ class ManufacturersViewModel @ViewModelInject constructor(
         val deviceDao = appDatabase.deviceDao()
         val items = deviceDao.getManufacturers()
 
-        sampleData.addAll(items.map {
-            ItemModel(
-                it.manufacturerName.hashCode(),
-                "${it.manufacturerName} - ${it.totalDevicesMade}"
-            )
-        })
+        sampleData.addAll(
+            items.map {
+                ItemModel(
+                    it.manufacturerName.hashCode(),
+                    "${it.manufacturerName} - ${it.totalDevicesMade}"
+                )
+            }
+        )
 
         _data.postValue(sampleData)
     }
