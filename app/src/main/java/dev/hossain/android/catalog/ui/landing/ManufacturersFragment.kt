@@ -60,19 +60,25 @@ class ManufacturersFragment : Fragment() {
             adapter = ideaListAdapter
         }
 
-        viewModel.data.observe(viewLifecycleOwner, Observer { result ->
-            ideaListAdapter.submitList(result)
-            setupFastScroller(result)
-        })
+        viewModel.data.observe(
+            viewLifecycleOwner,
+            Observer { result ->
+                ideaListAdapter.submitList(result)
+                setupFastScroller(result)
+            }
+        )
     }
 
     @SuppressLint("DefaultLocale")
     private fun setupFastScroller(result: List<ItemModel>) {
         itemResult = result
-        binding.fastscroller.setupWithRecyclerView(binding.recyclerView, { position ->
-            val item = itemResult[position] // Get your model object
-            FastScrollItemIndicator.Text(item.title.substring(0, 1).toUpperCase())
-        })
+        binding.fastscroller.setupWithRecyclerView(
+            binding.recyclerView,
+            { position ->
+                val item = itemResult[position] // Get your model object
+                FastScrollItemIndicator.Text(item.title.substring(0, 1).toUpperCase())
+            }
+        )
 
         binding.fastscrollerThumb.setupWithFastScroller(binding.fastscroller)
     }

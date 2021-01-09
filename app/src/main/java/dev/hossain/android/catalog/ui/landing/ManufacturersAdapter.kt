@@ -25,8 +25,10 @@ class ManufacturersAdapter(
 
     override fun createBinding(parent: ViewGroup): ListItemFeatureYBinding {
         val binding = DataBindingUtil.inflate<ListItemFeatureYBinding>(
-            LayoutInflater.from(parent.context), R.layout.list_item_feature_y,
-            parent, false
+            LayoutInflater.from(parent.context),
+            R.layout.list_item_feature_y,
+            parent,
+            false
         )
 
         binding.actionDelete.setOnClickListener {

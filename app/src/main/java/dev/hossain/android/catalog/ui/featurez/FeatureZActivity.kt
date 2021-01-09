@@ -34,10 +34,13 @@ class FeatureZActivity : AppCompatActivity() {
      * TODO: This is an example of how LiveData can be used to navigate. Update accordingly.
      */
     private fun observeNavigationEvents(viewModel: FeatureZViewModel) {
-        viewModel.showDialogEvent.observe(this, Observer {
-            Timber.i("Showing dialog")
-            val dialog = FeatureZDialogFragment()
-            dialog.show(supportFragmentManager, "dialog")
-        })
+        viewModel.showDialogEvent.observe(
+            this,
+            Observer {
+                Timber.i("Showing dialog")
+                val dialog = FeatureZDialogFragment()
+                dialog.show(supportFragmentManager, "dialog")
+            }
+        )
     }
 }

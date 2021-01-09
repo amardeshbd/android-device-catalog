@@ -29,6 +29,10 @@ interface DeviceDao {
     @Query("SELECT manufacturer, COUNT(*) AS total_devices_made FROM devices GROUP BY manufacturer")
     suspend fun getManufacturers(): List<TupleManufacturer>
 
+    // Refs on using
+    // https://stackoverflow.com/questions/55297165/room-dao-order-by-asc-or-desc-variable
+    // https://stackoverflow.com/questions/44184769/android-room-select-query-with-like
+
     //
     // Insert new data and relational data
     //

@@ -14,11 +14,13 @@ import androidx.databinding.ObservableField
  * ```
  */
 inline fun <T> ObservableField<T>.onChanged(crossinline callback: (T) -> Unit) {
-    addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
-        override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
-            callback.invoke(get()!!)
+    addOnPropertyChangedCallback(
+        object : Observable.OnPropertyChangedCallback() {
+            override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
+                callback.invoke(get()!!)
+            }
         }
-    })
+    )
 }
 
 /**

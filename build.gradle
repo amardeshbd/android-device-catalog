@@ -50,7 +50,7 @@ buildscript {
         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.4.1'
 
         // https://github.com/jlleitschuh/ktlint-gradle#supported-kotlin-plugins
-        classpath "org.jlleitschuh.gradle:ktlint-gradle:9.2.1"
+        classpath "org.jlleitschuh.gradle:ktlint-gradle:9.4.1"
     }
 }
 
